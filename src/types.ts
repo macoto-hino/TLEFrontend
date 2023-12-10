@@ -1,0 +1,100 @@
+interface MainPanel {
+  title: string,
+  image: string,
+  items: MainPanelItem[]
+}
+
+type MainPanelItem = MainPanelItemTitle | MainPanelItemMessage | MainPanelItemDivider | MainPanelItemRadio | MainPanelItemCheckbox | MainPanelItemButton | MainPanelItemNotification;
+
+interface MainPanelItemTitle {
+  itemType: "title",
+  title: string
+}
+
+interface MainPanelItemMessage {
+  itemType: "message",
+  message: string
+}
+
+interface MainPanelItemDivider {
+  itemType: "divider"
+}
+
+interface MainPanelItemRadio {
+  itemType: "radio",
+  type: string,
+  isChecked: boolean,
+  key: string,
+  value: string,
+  label: string,
+  engineEventName: string
+}
+
+interface MainPanelItemCheckbox {
+  itemType: "checkbox",
+  type: string,
+  isChecked: boolean,
+  key: string,
+  value: string,
+  label: string,
+  engineEventName: string
+}
+
+interface MainPanelItemButton {
+  itemType: "button",
+  type: "button",
+  key: string,
+  value: string,
+  label: string,
+  engineEventName: string
+}
+
+interface MainPanelItemNotification {
+  itemType: "notification",
+  type: "notification",
+  label: string,
+  notificationType: string
+}
+
+interface WorldPosition {
+  x: number,
+  y: number,
+  z: number
+}
+
+interface ScreenPosition {
+  left: number,
+  top: number
+}
+
+interface LaneDirectionTool {
+  buttons: LaneToolButton[],
+  panels: LaneDirectionToolPanel[]
+}
+
+interface LaneToolButton {
+  image: string,
+  visible: boolean,
+  position: WorldPosition,
+  engineEventName: string
+}
+
+interface LaneDirectionToolPanel {
+  title: string,
+  image: string,
+  visible: boolean,
+  position: WorldPosition,
+  lanes: LaneDirection[],
+  items: MainPanelItemButton[]
+}
+
+interface LaneDirection {
+  itemType: "lane",
+  position: WorldPosition,
+  leftHandTraffic: boolean,
+  label: string,
+  banLeft: boolean,
+  banRight: boolean,
+  banStraight: boolean,
+  banUTurn: boolean
+}
