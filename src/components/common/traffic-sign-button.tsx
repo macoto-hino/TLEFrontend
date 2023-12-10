@@ -9,11 +9,12 @@ const Button = styled.div<{border: string, backgroundColor: string}>`
 `;
 
 const Sign = styled.div<{color: string, padding: string, lineHeight: string}>`
+  padding: ${props => props.padding};
+  line-height: ${props => props.lineHeight};
   color: ${props => props.color};
   font-size: 24rem;
-  line-height: ${props => props.lineHeight};
   font-weight: bold;
-  padding: ${props => props.padding};
+  font-family: "Overpass";
 `;
 
 export default function TrafficSignButton(props: {
