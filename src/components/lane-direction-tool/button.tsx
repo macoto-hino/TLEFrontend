@@ -8,6 +8,7 @@ const ButtonComponent = styled.div<{visible: boolean}>`
   background-color: rgba(6, 10, 16, 0.7);
   display: ${props => props.visible ? "block" : "none"};
   position: fixed;
+  transition: left 0.1s linear, top 0.1s linear;
 `;
 
 const Image = styled.img`

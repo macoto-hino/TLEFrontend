@@ -6,7 +6,8 @@ import Button from '@/components/common/button';
 
 const Container = styled.div`
   /* width: 250rem; */
-  position: absolute;
+  position: fixed;
+  transition: left 0.1s linear, top 0.1s linear;
 `;
 
 const Header = styled.div`
