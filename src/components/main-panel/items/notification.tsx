@@ -1,4 +1,8 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+
+import { LocaleContext } from '@/context';
+import { getString } from '@/localisations';
 
 const Warning = styled.div`
   animation-timing-function: linear;
@@ -24,11 +28,12 @@ const Label = styled.div`
 `;
 
 export default function Notification(props: MainPanelItemNotification) {
+  const locale = useContext(LocaleContext);
   return (
     props.notificationType == "warning" &&
     <Warning>
       <Image src="Media/Game/Icons/AdvisorNotifications.svg" />
-      <Label>{props.label}</Label>
+      <Label>{getString(locale, props.label)}</Label>
       <style>
         {`@keyframes c2vm-tle-notification-warning {
           to {

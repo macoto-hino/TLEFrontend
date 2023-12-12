@@ -1,4 +1,9 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+
+import { LocaleContext } from '@/context';
+import { getString } from '@/localisations';
+
 import Title from './items/title';
 import Message from './items/message';
 import Divider from './items/divider';
@@ -24,6 +29,7 @@ const Label = styled.span`
 `;
 
 export default function Content(props: {items: MainPanelItem[]}) {
+  const locale = useContext(LocaleContext);
   return (
     <Container>
       {props.items.map((item) => {
@@ -40,7 +46,7 @@ export default function Content(props: {items: MainPanelItem[]}) {
           return (
             <Row data={item}>
               <Radio {...item} />
-              <Label>{item.label}</Label>
+              <Label>{getString(locale, item.label)}</Label>
             </Row>
           );
         }
@@ -48,7 +54,7 @@ export default function Content(props: {items: MainPanelItem[]}) {
           return (
             <Row data={item}>
               <Checkbox {...item} />
-              <Label>{item.label}</Label>
+              <Label>{getString(locale, item.label)}</Label>
             </Row>
           );
         }

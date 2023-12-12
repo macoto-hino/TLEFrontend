@@ -1,4 +1,8 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+
+import { LocaleContext } from '@/context';
+import { getString } from '@/localisations';
 
 const Container = styled.div`
   margin: 20rem auto;
@@ -7,9 +11,10 @@ const Container = styled.div`
 `;
 
 export default function Message(props: MainPanelItemMessage) {
+  const locale = useContext(LocaleContext);
   return (
     <Container>
-      {props.message}
+      {getString(locale, props.message)}
     </Container>
   );
 }
