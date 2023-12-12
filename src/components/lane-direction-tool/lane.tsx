@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import TrafficSignButton from '../common/traffic-sign-button';
 
 const Container = styled.div`
@@ -22,15 +23,58 @@ const Box = styled.div`
 `;
 
 export default function Lane(props: {data: LaneDirection, onClick: (eventName: "banLeft" | "banRight" | "banStraight" | "banUTurn") => void}) {
+  const opacity = (allow: boolean) => allow ? 1 : 0.25;
   return (
     <>
       {/* <Box style={{flex: "0 0 60rem", justifyContent: "flex-start"}}>{props.data.label}</Box> */}
       <Container>
-        <Box><TrafficSignButton allow={!props.data.banLeft} variant="sign" sign="←" onClick={() => props.onClick("banLeft")}/></Box>
-        <Box><TrafficSignButton allow={!props.data.banStraight} variant="sign" sign="↑" onClick={() => props.onClick("banStraight")}/></Box>
-        <Box><TrafficSignButton allow={!props.data.banRight} variant="sign" sign="→" onClick={() => props.onClick("banRight")}/></Box>
-        {props.data.leftHandTraffic && <Box><TrafficSignButton allow={!props.data.banUTurn} variant="sign" sign="↷" onClick={() => props.onClick("banUTurn")}/></Box>}
-        {!props.data.leftHandTraffic && <Box><TrafficSignButton allow={!props.data.banUTurn} variant="sign" sign="↶" onClick={() => props.onClick("banUTurn")}/></Box>}
+        <Box>
+          <TrafficSignButton
+            allow={!props.data.banLeft}
+            variant="sign"
+            sign="←"
+            onClick={() => props.onClick("banLeft")}
+            style={{opacity: opacity(!props.data.banLeft)}}
+          />
+        </Box>
+        <Box>
+          <TrafficSignButton
+            allow={!props.data.banStraight}
+            variant="sign"
+            sign="↑"
+            onClick={() => props.onClick("banStraight")}
+            style={{opacity: opacity(!props.data.banStraight)}}
+          />
+        </Box>
+        <Box>
+          <TrafficSignButton
+            allow={!props.data.banRight}
+            variant="sign"
+            sign="→"
+            onClick={() => props.onClick("banRight")}
+            style={{opacity: opacity(!props.data.banRight)}}
+          />
+        </Box>
+        {props.data.leftHandTraffic && (
+        <Box>
+          <TrafficSignButton
+            allow={!props.data.banUTurn}
+            variant="sign"
+            sign="↷"
+            onClick={() => props.onClick("banUTurn")}
+            style={{opacity: opacity(!props.data.banUTurn)}}
+          />
+        </Box>)}
+        {!props.data.leftHandTraffic && (
+        <Box>
+          <TrafficSignButton
+            allow={!props.data.banUTurn}
+            variant="sign"
+            sign="↶"
+            onClick={() => props.onClick("banUTurn")}
+            style={{opacity: opacity(!props.data.banUTurn)}}
+          />
+        </Box>)}
       </Container>
     </>
   );
