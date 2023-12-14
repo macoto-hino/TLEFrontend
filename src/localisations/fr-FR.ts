@@ -13,7 +13,7 @@ export default {
   Close: "Fermer",
   Open: "Ouvrir",
   Reset: "Réinitialiser",
-  Save: "Sauver",
+  Save: "Sauvegarder",
   PleaseSave: "Veuillez sauvegarder les changements avant de choisir un autre croisement",
   PleaseSelectJunction: "Veuillez choisir un croisement",
   Left: "Gauche",
