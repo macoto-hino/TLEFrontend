@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -28,9 +29,9 @@ const HeaderTitle = styled.div`
   white-space: nowrap;
 `;
 
-export default function Header(props: {title: string, image: string}) {
+export default function Header(props: {title: string, image: string, onMouseDown?: MouseEventHandler<HTMLDivElement>}) {
   return (
-    <Container>
+    <Container {...props}>
         <HeaderImage src={props.image} />
         <HeaderTitle>{props.title}</HeaderTitle>
     </Container>

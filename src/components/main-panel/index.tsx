@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import Header from './header';
@@ -29,7 +29,7 @@ const useMainPanel = () => {
 };
 
 const Container = styled.div`
-  width: 300rem;
+  width: 330rem;
   position: absolute;
   top: calc(10rem + var(--floatingToggleSize) + 6rem);
   left: 10rem;
@@ -38,10 +38,15 @@ const Container = styled.div`
 export default function MainPanel() {
   const [showPanel, setShowPanel] = useState(false);
 
+  const [top, setTop] = useState(-999);
+  const [left, setLeft] = useState(-999);
+  const [dragging, setDragging] = useState(false);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const panel = useMainPanel();
 
   useEffect(() => {
-    const body = document.querySelector("body");
     const config = { attributes: true, childList: true, subtree: true };
     const callback = (_mutationList: MutationRecord[], _observer: MutationObserver) => {
       const img = document.querySelector("button.selected.item_KJ3.item-hover_WK8.item-active_Spn > img") as HTMLImageElement;
@@ -53,9 +58,7 @@ export default function MainPanel() {
       }
     };
     const observer = new MutationObserver(callback);
-    if (body) {
-      observer.observe(body, config);
-    }
+    observer.observe(document.body, config);
     return () => observer.disconnect();
   }, [showPanel]);
 
@@ -65,9 +68,49 @@ export default function MainPanel() {
     }
   }, [panel]);
 
+  const mouseDownHandler = (_event: React.MouseEvent<HTMLElement>) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setTop(rect.top);
+      setLeft(rect.left);
+      setDragging(true);
+    }
+  };
+  const mouseUpHandler = (_event: MouseEvent) => {
+    setDragging(false);
+  };
+  const mouseMoveHandler = (event: MouseEvent) => {
+    if (dragging) {
+      setTop((prev) => prev + event.movementY);
+      setLeft((prev) => prev + event.movementX);
+    }
+  };
+
+  useEffect(() => {
+    if (dragging) {
+      document.body.addEventListener("mouseup", mouseUpHandler);
+      document.body.addEventListener("mousemove", mouseMoveHandler);
+      return () => {
+        document.body.removeEventListener("mouseup", mouseUpHandler);
+        document.body.removeEventListener("mousemove", mouseMoveHandler);
+      };
+    }
+  }, [dragging]);
+
+  const style: React.CSSProperties = {
+    display: showPanel ? "block" : "none"
+  };
+  if (top >= -100 && left >= -100) {
+    style.top = top;
+    style.left = left;
+  }
+
   return (
-    <Container style={{display: showPanel ? "block" : "none"}}>
-      <Header {...panel} />
+    <Container
+      ref={containerRef}
+      style={style}
+    >
+      <Header onMouseDown={mouseDownHandler} {...panel} />
       <Content items={panel.items} />
     </Container>
   );
