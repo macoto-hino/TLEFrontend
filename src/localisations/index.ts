@@ -7,8 +7,14 @@ import ptBR from "./pt-BR";
 import ruRU from "./ru-RU";
 import zhHANS from "./zh-HANS";
 import zhHANT from "./zh-HANT";
+import zhHK from "./zh-HK";
+import zhTW from "./zh-TW";
 
 const defaultLocale = "en-US";
+
+const cultures: {[key: string]: string[]} = {
+  "zh-HANT": ["zh-HK", "zh-TW"]
+}
 
 const localisations: {[key: string]: {[key: string]: string}} = {
   "de-DE": deDE,
@@ -19,7 +25,9 @@ const localisations: {[key: string]: {[key: string]: string}} = {
   "pt-BR": ptBR,
   "ru-RU": ruRU,
   "zh-HANS": zhHANS,
-  "zh-HANT": zhHANT
+  "zh-HANT": zhHANT,
+  "zh-HK": zhHK,
+  "zh-TW": zhTW
 };
 
 const getString = (locale: string, key: string) => {
@@ -36,6 +44,7 @@ const getString = (locale: string, key: string) => {
 }
 
 export {
+  cultures,
   defaultLocale,
   getString,
   localisations

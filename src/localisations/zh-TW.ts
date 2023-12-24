@@ -1,0 +1,23 @@
+export default {
+  TrafficSignal: "交通號誌",
+  Vanilla: "遊戲預設",
+  SplitPhasing: "輪放多時相號誌",
+  AdvancedSplitPhasing: "進階輪放多時相號誌",
+  ProtectedRightTurns: "右轉保護時相",
+  ProtectedLeftTurns: "左轉保護時相",
+  Options: "選項",
+  ExclusivePedestrianPhase: "行人專用時相",
+  AlwaysGreenLeftTurns: "左轉無視號誌限制",
+  AlwaysGreenRightTurns: "右轉無視號誌限制",
+  LaneDirectionTool: "車道遵行方向設定 (實驗中)",
+  Close: "關閉",
+  Open: "開啟",
+  Reset: "重設",
+  Save: "儲存",
+  PleaseSave: "在選擇另一路口前，請先儲存設定",
+  PleaseSelectJunction: "請選擇路口",
+  Left: "左轉",
+  Ahead: "直行",
+  Right: "右轉",
+  UTurn: "迴轉"
+}
