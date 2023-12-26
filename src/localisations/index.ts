@@ -3,6 +3,7 @@ import enUS from "./en-US";
 import frFR from "./fr-FR";
 import jaJP from "./ja-JP";
 import koKR from "./ko-KR";
+import nlNL from "./nl-NL";
 import ptBR from "./pt-BR";
 import ruRU from "./ru-RU";
 import zhHANS from "./zh-HANS";
@@ -13,8 +14,9 @@ import zhTW from "./zh-TW";
 const defaultLocale = "en-US";
 
 const cultures: {[key: string]: string[]} = {
+  "en-US": ["nl-NL"],
   "zh-HANT": ["zh-HK", "zh-TW"]
-}
+};
 
 const localisations: {[key: string]: {[key: string]: string}} = {
   "de-DE": deDE,
@@ -22,6 +24,7 @@ const localisations: {[key: string]: {[key: string]: string}} = {
   "fr-FR": frFR,
   "ja-JP": jaJP,
   "ko-KR": koKR,
+  "nl-NL": nlNL,
   "pt-BR": ptBR,
   "ru-RU": ruRU,
   "zh-HANS": zhHANS,

@@ -80,10 +80,8 @@ export default function MainPanel() {
     setDragging(false);
   };
   const mouseMoveHandler = (event: MouseEvent) => {
-    if (dragging) {
-      setTop((prev) => prev + event.movementY);
-      setLeft((prev) => prev + event.movementX);
-    }
+    setTop((prev) => prev + event.movementY);
+    setLeft((prev) => prev + event.movementX);
   };
 
   useEffect(() => {
