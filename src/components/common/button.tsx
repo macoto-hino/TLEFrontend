@@ -7,8 +7,8 @@ import { getString } from '@/localisations';
 const ButtonComponent = styled.div`
   padding: 3rem;
   border-radius: 3rem;
-  color: white;
-  background-color: rgba(6, 10, 16, 0.7);
+  color: var(--accentColorLighter);
+  background-color: var(--toolbarFieldColor);
   flex: 1;
   text-align: center;
 `;

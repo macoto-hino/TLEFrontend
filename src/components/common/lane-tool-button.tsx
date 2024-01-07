@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Button = styled.div`
   padding: 3rem;
   border-radius: 3rem;
-  background-color: rgba(6, 10, 16, 0.7);
+  background-color: var(--panelColorNormal);
 `;
 
 const Image = styled.img`

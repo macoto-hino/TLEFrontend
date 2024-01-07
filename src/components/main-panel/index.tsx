@@ -98,7 +98,7 @@ export default function MainPanel() {
   const style: React.CSSProperties = {
     display: showPanel ? "block" : "none"
   };
-  if (top >= -100 && left >= -100) {
+  if (top >= -200 && left >= -200) {
     style.top = top;
     style.left = left;
   }

@@ -23,7 +23,7 @@ const Image = styled.img`
 `;
 
 const Label = styled.div`
-  color: rgba(217, 217, 217, 1);
+  color: var(--textColor);
   flex: 1;
 `;
 

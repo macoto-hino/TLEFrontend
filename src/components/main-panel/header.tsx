@@ -2,10 +2,10 @@ import { MouseEventHandler } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  background-color: var(--panelColorDark);
+  backdrop-filter: var(--panelBlur);
   border-radius: 4rem 4rem 0rem 0rem;
-  background-color: rgba(24, 33, 51, 0.6);
-  backdrop-filter: blur(5px);
-  color: rgba(75, 195, 241, 1);
+  color: var(--accentColorNormal);
   font-size: 14rem;
   padding: 6rem 10rem;
   min-height: 36rem;

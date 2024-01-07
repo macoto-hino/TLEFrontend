@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Checkbox from '@/components/common/checkbox';
 
 const Label = styled.span`
-  color: rgba(217, 217, 217, 1);
+  color: var(--textColorDim);
 `;
 
 export default function Option(props: MainPanelItemCheckbox) {

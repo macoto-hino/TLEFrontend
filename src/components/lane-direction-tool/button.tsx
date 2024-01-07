@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ButtonComponent = styled.div<{visible: boolean}>`
   padding: 3rem;
   border-radius: 3rem;
-  background-color: rgba(6, 10, 16, 0.7);
+  background-color: var(--panelColorNormal);
   display: ${props => props.visible ? "block" : "none"};
   position: fixed;
   transition: left 0.1s linear, top 0.1s linear;

@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 
 const Box = styled.div`
+  border-width: 2px;
+  border-style: solid;
+  border-bottom-color: var(--textColorDimmer);
+  border-left-color: var(--textColorDimmer);
+  border-right-color: var(--textColorDimmer);
+  border-top-color: var(--textColorDimmer);
+  border-radius: 3rem;
   margin: 0 10rem 0 0;
   width: 20rem;
   height: 20rem;
   padding: 1px;
-  border: 2px solid rgba(255, 255, 255, 0.500000);
-  border-radius: 3rem;
 `;
 
 const Checkmark = styled.div<{isChecked: boolean}>`
   width: 100%;
   height: 100%;
   mask-size: 100% auto;
-  background-color: white;
+  background-color: var(--textColor);
   opacity: ${props => props.isChecked ? 1 : 0};
 `;
 
