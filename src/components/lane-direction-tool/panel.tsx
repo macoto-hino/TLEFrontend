@@ -1,20 +1,19 @@
 import { translatePosition, engineCall } from '@/engine';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Lane from './lane';
 import Button from '@/components/common/button';
 
 const Container = styled.div`
-  /* width: 250rem; */
   position: fixed;
   transition: left 0.1s linear, top 0.1s linear;
 `;
 
 const Header = styled.div`
   border-radius: 4rem 4rem 0rem 0rem;
-  background-color: rgba(24, 33, 51, 0.6);
-  backdrop-filter: blur(5px);
-  color: rgba(75, 195, 241, 1);
+  background-color: var(--panelColorDark);
+  backdrop-filter: var(--panelBlur);
+  color: var(--accentColorNormal);
   font-size: 14rem;
   padding: 6rem 10rem;
   min-height: 36rem;
@@ -40,10 +39,9 @@ const HeaderTitle = styled.div`
 
 const Content = styled.div`
   border-radius: 4rem;
-  /* border-radius: 0rem 0rem 4rem 4rem; */
-  background-color: rgba(42, 55, 83, 0.437500);
-  backdrop-filter: blur(5px);
-  color: rgba(255, 255, 255, 1);
+  background-color: var(--panelColorNormal);
+  backdrop-filter: var(--panelBlur);
+  color: var(--textColor);
   flex: 1;
   position: relative;
   padding: 6rem;
@@ -106,12 +104,22 @@ export default function Panel(props: {data: LaneDirectionToolPanel, onSave?: () 
     });
   };
 
-  const buttonClickHandler = (engineEventName: string) => {
+  const buttonClickHandler = useCallback((engineEventName: string) => {
     if (props.onSave) {
       props.onSave();
     }
     engineCall(engineEventName, JSON.stringify(panel));
-  };
+  }, [props, panel]);
+
+  useEffect(() => {
+    const keyDownHandler = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.key == "S") {
+        buttonClickHandler("C2VM-TLE-Call-LaneDirectionTool-Panel-Save");
+      }
+    };
+    document.addEventListener("keydown", keyDownHandler);
+    return () => document.removeEventListener("keydown", keyDownHandler);
+  }, [buttonClickHandler]);
 
   return (
     <Container style={screenPosition}>

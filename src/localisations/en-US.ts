@@ -14,10 +14,14 @@ export default {
   Open: "Open",
   Reset: "Reset",
   Save: "Save",
-  PleaseSave: "Please save changes before selecting another junction",
-  PleaseSelectJunction: "Please select a junction",
+  PleaseSave: "Please save changes before selecting another junction.",
+  PleaseSelectJunction: "Please Select a Junction",
   Left: "Left",
   Ahead: "Ahead",
   Right: "Right",
-  UTurn: "U-Turn"
+  UTurn: "U-Turn",
+  GiveWayToOncomingVehicles: "Give Way to Oncoming Vehicles",
+  CustomPedestrianDurationMultiplier: "Pedestrian Phase Duration",
+  CustomPedestrianDurationMultiplierSuffix: "x",
+  AllowTurningOnRed: "Allow Turning on Red"
 };

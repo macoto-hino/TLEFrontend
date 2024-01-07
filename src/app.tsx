@@ -9,6 +9,7 @@ import LaneDirectionTool from "./components/lane-direction-tool";
 
 export default function App() {
   const [locale, setLocale] = useState(defaultLocale);
+  const [ldtOpenedPanel, setLdtOpenedPanel] = useState(-1);
 
   const updateLocale = async () => {
     const callResult = await engineCall("C2VM-TLE-Call-GetLocale");
@@ -34,10 +35,22 @@ export default function App() {
     }
   }, []);
 
+  useEffect(() => {
+    if (ldtOpenedPanel < 0) {
+      const keyDownHandler = (event: KeyboardEvent) => {
+        if (event.ctrlKey && event.key == "S") {
+          engineCall("C2VM-TLE-Call-KeyPress", JSON.stringify({ctrlKey: event.ctrlKey, key: event.key}));
+        }
+      };
+      document.addEventListener("keydown", keyDownHandler);
+      return () => document.removeEventListener("keydown", keyDownHandler);
+    }
+  }, [ldtOpenedPanel]);
+
   return (
     <LocaleContext.Provider value={locale}>
       <MainPanel />
-      <LaneDirectionTool />
+      <LaneDirectionTool onChange={setLdtOpenedPanel} />
     </LocaleContext.Provider>
   );
 }

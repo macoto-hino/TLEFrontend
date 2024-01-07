@@ -21,7 +21,7 @@ const useLaneDirectionTool = () => {
   return tool;
 };
 
-export default function LaneDirectionTool() {
+export default function LaneDirectionTool(props: {onChange?: (openedPanel: number) => void}) {
   const tool = useLaneDirectionTool();
 
   const [openedPanel, setOpenedPanel] = useState(-1);
@@ -29,6 +29,12 @@ export default function LaneDirectionTool() {
   useEffect(() => {
     setOpenedPanel(-1);
   }, [tool]);
+
+  useEffect(() => {
+    if (props.onChange) {
+      props.onChange(openedPanel);
+    }
+  }, [openedPanel, props]);
 
   return (
     <>

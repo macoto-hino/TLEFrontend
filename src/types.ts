@@ -4,11 +4,12 @@ interface MainPanel {
   items: MainPanelItem[]
 }
 
-type MainPanelItem = MainPanelItemTitle | MainPanelItemMessage | MainPanelItemDivider | MainPanelItemRadio | MainPanelItemCheckbox | MainPanelItemButton | MainPanelItemNotification;
+type MainPanelItem = MainPanelItemTitle | MainPanelItemMessage | MainPanelItemDivider | MainPanelItemRadio | MainPanelItemCheckbox | MainPanelItemButton | MainPanelItemNotification | MainPanelItemRange;
 
 interface MainPanelItemTitle {
   itemType: "title",
-  title: string
+  title: string,
+  secondaryText?: string
 }
 
 interface MainPanelItemMessage {
@@ -54,6 +55,19 @@ interface MainPanelItemNotification {
   type: "notification",
   label: string,
   notificationType: string
+}
+
+interface MainPanelItemRange {
+  itemType: "range",
+  key: string,
+  label: string,
+  value: number,
+  valuePrefix: string,
+  valueSuffix: string,
+  min: number,
+  max: number,
+  step: number,
+  engineEventName: string
 }
 
 interface WorldPosition {
