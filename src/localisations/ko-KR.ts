@@ -19,5 +19,9 @@ export default {
   Left: "좌회전",
   Ahead: "직진",
   Right: "우회전",
-  UTurn: "유턴"
-}
+  UTurn: "유턴",
+  GiveWayToOncomingVehicles: "Give Way to Oncoming Vehicles",
+  CustomPedestrianDurationMultiplier: "Pedestrian Phase Duration",
+  CustomPedestrianDurationMultiplierSuffix: "x",
+  AllowTurningOnRed: "Allow Turning on Red"
+};

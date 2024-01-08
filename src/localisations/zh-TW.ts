@@ -14,10 +14,14 @@ export default {
   Open: "開啟",
   Reset: "重設",
   Save: "儲存",
-  PleaseSave: "在選擇另一路口前，請先儲存設定",
+  PleaseSave: "在選擇另一路口前，請先儲存設定。",
   PleaseSelectJunction: "請選擇路口",
   Left: "左轉",
   Ahead: "直行",
   Right: "右轉",
-  UTurn: "迴轉"
-}
+  UTurn: "迴轉",
+  GiveWayToOncomingVehicles: "讓路給迎面駛來的車輛",
+  CustomPedestrianDurationMultiplier: "行人時相長短",
+  CustomPedestrianDurationMultiplierSuffix: "倍",
+  AllowTurningOnRed: "容許於紅燈時轉彎"
+};

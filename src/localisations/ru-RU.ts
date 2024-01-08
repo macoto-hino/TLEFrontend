@@ -19,5 +19,9 @@ export default {
   Left: "Налево",
   Ahead: "Прямо",
   Right: "Направо",
-  UTurn: "Разворот"
-}
+  UTurn: "Разворот",
+  GiveWayToOncomingVehicles: "Give Way to Oncoming Vehicles",
+  CustomPedestrianDurationMultiplier: "Pedestrian Phase Duration",
+  CustomPedestrianDurationMultiplierSuffix: "x",
+  AllowTurningOnRed: "Allow Turning on Red"
+};

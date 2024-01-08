@@ -19,5 +19,9 @@ export default {
   Left: "左折",
   Ahead: "直進",
   Right: "右折",
-  UTurn: "転回"
-}
+  UTurn: "転回",
+  GiveWayToOncomingVehicles: "Give Way to Oncoming Vehicles",
+  CustomPedestrianDurationMultiplier: "Pedestrian Phase Duration",
+  CustomPedestrianDurationMultiplierSuffix: "x",
+  AllowTurningOnRed: "Allow Turning on Red"
+};

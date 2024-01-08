@@ -1,5 +1,5 @@
 export default {
-  TrafficSignal: "Feux tricolores",
+  TrafficSignal: "Feux de circulations",
   Vanilla: "Vanilla",
   SplitPhasing: "Feux fractionnés",
   AdvancedSplitPhasing: "Feux fractionnés avancés",
@@ -14,10 +14,14 @@ export default {
   Open: "Ouvrir",
   Reset: "Réinitialiser",
   Save: "Sauvegarder",
-  PleaseSave: "Veuillez sauvegarder les changements avant de choisir un autre croisement",
-  PleaseSelectJunction: "Veuillez choisir un croisement",
+  PleaseSave: "Veuillez enregistrer les modifications avant de sélectionner une autre intersection.",
+  PleaseSelectJunction: "Veuillez sélectionner une intersection",
   Left: "Gauche",
   Ahead: "En face",
   Right: "Droite",
-  UTurn: "Demi tour"
-}
+  UTurn: "Demi tour",
+  GiveWayToOncomingVehicles: "Give Way to Oncoming Vehicles",
+  CustomPedestrianDurationMultiplier: "Pedestrian Phase Duration",
+  CustomPedestrianDurationMultiplierSuffix: "x",
+  AllowTurningOnRed: "Allow Turning on Red"
+};

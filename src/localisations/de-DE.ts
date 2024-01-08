@@ -14,10 +14,14 @@ export default {
   Open: "Öffnen",
   Reset: "Zurücksetzen",
   Save: "Speichern",
-  PleaseSave: "Bitte speichere die Einstellungen bevor du eine andere Kreuzung bearbeitest",
+  PleaseSave: "Bitte speichere die Einstellungen bevor du eine andere Kreuzung bearbeitest.",
   PleaseSelectJunction: "Bitte wähle eine Kreuzung",
   Left: "Links",
   Ahead: "Geradeaus",
   Right: "Rechts",
-  UTurn: "Kehrtwende"
-}
+  UTurn: "Kehrtwende",
+  GiveWayToOncomingVehicles: "Give Way to Oncoming Vehicles",
+  CustomPedestrianDurationMultiplier: "Pedestrian Phase Duration",
+  CustomPedestrianDurationMultiplierSuffix: "x",
+  AllowTurningOnRed: "Allow Turning on Red"
+};
