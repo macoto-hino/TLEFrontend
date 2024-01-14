@@ -20,8 +20,8 @@ export default {
   Ahead: "直進",
   Right: "右折",
   UTurn: "転回",
-  GiveWayToOncomingVehicles: "Give Way to Oncoming Vehicles",
-  CustomPedestrianDurationMultiplier: "Pedestrian Phase Duration",
+  GiveWayToOncomingVehicles: "対向車優先",
+  CustomPedestrianDurationMultiplier: "歩行者フェーズの所要時間",
   CustomPedestrianDurationMultiplierSuffix: "x",
-  AllowTurningOnRed: "Allow Turning on Red"
+  AllowTurningOnRed: "赤信号での旋回を許可"
 };
